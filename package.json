@@ -1,0 +1,52 @@
+{
+  "name": "multi-import",
+  "version": "0.0.1",
+  "description": "Dynamically import multiple ES modules at once.",
+  "license": "ISC",
+  "author": "Francesco Trotta <ft@fasttime.org> (https://github.com/fasttime)",
+  "files": [
+    "lib"
+  ],
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fasttime/multi-import.git"
+  },
+  "scripts": {
+    "build": "npm install && npm run build-no-install",
+    "build-no-install": "npm run clean && npm run lint && npm run make && npm run coverage",
+    "clean": "node ./dev/clean.js",
+    "coverage": "c8 --reporter=html --reporter=text-summary npm test",
+    "lint": "node ./dev/lint.js",
+    "make": "node ./dev/make.js",
+    "test": "node node_modules/mocha/bin/mocha --check-leaks test/*.spec.js"
+  },
+  "devDependencies": {
+    "42": "file:test/some-dir",
+    "@fasttime/lint": "latest",
+    "c8": "latest",
+    "chai": "latest",
+    "fast-glob": "latest",
+    "length": "file:test/some-dir",
+    "mocha": "latest",
+    "mocha-bar": "latest",
+    "rollup": "latest"
+  },
+  "engines": {
+    "node": ">=16.0"
+  },
+  "exports": {
+    ".": {
+      "import": "./lib/multi-import.js",
+      "require": "./lib/multi-import.cjs",
+      "default": "./lib/multi-import.script.js"
+    },
+    "./package.json": "./package.json",
+    "./script": "./lib/multi-import.script.js"
+  },
+  "type": "module",
+  "types": "lib/multi-import.d.ts"
+}

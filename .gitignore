@@ -1,0 +1,8 @@
+.*
+!.git*
+!/.npmrc
+/*.cpuprofile
+/coverage/
+/lib/*.cjs
+/lib/*.js
+/node_modules/
