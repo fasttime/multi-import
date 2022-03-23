@@ -1,4 +1,4 @@
-# multi-import
+# multi-import · [![npm version][npm badge]][npm URL]
 
 Dynamically import multiple ES modules at once.
 
@@ -21,3 +21,6 @@ export async function tsTest()
     }
 }
 ```
+
+[npm badge]: https://badge.fury.io/js/multi-import.svg
+[npm URL]: https://www.npmjs.com/package/multi-import
