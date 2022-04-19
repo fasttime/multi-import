@@ -13,5 +13,5 @@ const outputOptionsList =
     { extend: true, file: 'lib/multi-import.script.cjs', format: 'iife', name: 'multi-import' },
     { file: 'lib/multi-import.cjs', exports: 'auto', format: 'cjs', plugins: [esmDynamicImport] },
 ];
-for (const outputOptions of outputOptionsList)
-    await bundle.write(outputOptions);
+const promises = outputOptionsList.map(outputOptions => bundle.write(outputOptions));
+await Promise.all(promises);
