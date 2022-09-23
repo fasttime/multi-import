@@ -9,17 +9,20 @@ await lint
 (
     {
         envs: 'shared-node-browser',
+        jsVersion: 2020,
         src: ['lib/*.ts', '{src,test}/**/*.js'],
-        parserOptions: { ecmaVersion: 2020, project: 'tsconfig.json', sourceType: 'module' },
+        parserOptions: { project: 'tsconfig.json', sourceType: 'module' },
     },
     {
         envs: 'shared-node-browser',
+        jsVersion: 2020,
         src: 'test/**/*.cjs',
-        parserOptions: { ecmaVersion: 2020, project: 'tsconfig.json' },
+        parserOptions: { project: 'tsconfig.json' },
     },
     {
         src: 'dev/*.js',
+        jsVersion: 2022,
         envs: 'node',
-        parserOptions: { ecmaVersion: 2022, sourceType: 'module' },
+        parserOptions: { sourceType: 'module' },
     },
 );

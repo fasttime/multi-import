@@ -19,15 +19,15 @@
     "build": "npm install && npm run build-no-install",
     "build-no-install": "npm run clean && npm run lint && npm run make && npm run coverage",
     "clean": "node ./dev/clean.js",
-    "coverage": "c8 --reporter=html --reporter=text-summary npm test",
+    "coverage": "node ./dev/coverage.js",
     "lint": "node ./dev/lint.js",
     "make": "node ./dev/make.js",
-    "test": "node node_modules/mocha/bin/mocha --check-leaks test/*.spec.js"
+    "test": "mocha --check-leaks test/*.spec.js"
   },
   "devDependencies": {
     "42": "file:test/some-dir",
     "@fasttime/lint": "latest",
-    "c8": "latest",
+    "c8js": "latest",
     "chai": "latest",
     "fast-glob": "latest",
     "length": "file:test/some-dir",
