@@ -8,21 +8,20 @@ process.chdir(workspaceFolder);
 await lint
 (
     {
-        envs: 'shared-node-browser',
-        jsVersion: 2020,
-        src: ['lib/*.ts', '{src,test}/**/*.js'],
-        parserOptions: { project: 'tsconfig.json', sourceType: 'module' },
+        envs:           'shared-node-browser',
+        jsVersion:      2020,
+        src:            ['lib/*.ts', '{src,test}/**/*.js'],
+        parserOptions:  { project: 'tsconfig.json', sourceType: 'module' },
     },
     {
-        envs: 'shared-node-browser',
-        jsVersion: 2020,
-        src: 'test/**/*.cjs',
-        parserOptions: { project: 'tsconfig.json' },
+        envs:           'shared-node-browser',
+        jsVersion:      2020,
+        src:            'test/**/*.cjs',
     },
     {
-        src: 'dev/*.js',
-        jsVersion: 2022,
-        envs: 'node',
-        parserOptions: { sourceType: 'module' },
+        src:            'dev/*.js',
+        jsVersion:      2022,
+        envs:           'node',
+        parserOptions:  { sourceType: 'module' },
     },
 );
